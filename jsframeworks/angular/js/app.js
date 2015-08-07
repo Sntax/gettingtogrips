@@ -10,6 +10,6 @@
   'use strict';
 
   // Define application dependencies in main application module
-  var app = angular.module('devpad', ['devpad.controllers']);
+  var app = angular.module('devpad', ['devpad.controllers', 'devpad.filters']);
 
 }());
