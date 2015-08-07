@@ -1,0 +1,141 @@
+/* ===================================================== */
+/* Author:                                   Andrew Hill */
+/* Component:                                     Devpad */
+/* Email:                         andrewjrhill@gmail.com */
+/* Project URL:                                      TBA */
+/* Description:                        Global stylesheet */
+/* ===================================================== */
+
+/* --- Color Palette --- */
+
+/*
+Nav Grey:    ##1B1B1B;
+             rgba(27, 27, 27, 1);
+
+Body Grey:   #222222;
+             rgba(34, 34, 34, 1);
+
+Border Grey: #888888;
+             rgba(136, 136, 136, 1);
+
+White:       #FFFFFF;
+             rgba(255, 255, 255, 1);
+
+Link Active: #3482C5;
+             rgba(52, 130, 197 ,1);
+
+Link Hover:  #34C5C5;
+             rgba(52, 197, 197, 1);
+
+*/
+
+/* --- Global Styles --- */
+
+html, 
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(34, 34, 34, 1);
+}
+
+div.main {
+  margin-top: 62px;
+}
+
+a,
+a:visited,
+a:active {
+  color: rgba(52, 130, 197 ,1);
+  text-decoration: none;
+}
+a:hover {
+  color: rgba(52, 197, 197, 1);
+  text-decoration: underline;
+}
+
+/* --- Sticky Navigation --- */
+
+div.sticky-nav {
+  background-color: rgba(27, 27, 27, 0.9);
+  border-top: 2px solid rgba(27, 27, 27, 1);
+  border-bottom: 2px solid rgba(22, 22, 22, 1);
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+div.sticky-nav p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+div.sticky-nav div.logo {
+  font-weight: 600;
+  float: left;
+  margin: 20px 0 0 100px;
+}
+div.sticky-nav div.logo span {
+  color: rgba(136, 136, 136, 1);
+  font-weight: 200;
+  font-size: 15px;
+}
+div.sticky-nav ul {
+  margin-top: 25px;
+  font-size: 14px;
+  color: rgba(136, 136, 136, 1);
+  float: right;
+}
+div.sticky-nav ul li {
+  float: left;
+  list-style-type: none;
+}
+div.sticky-nav ul li span {
+  color: rgba(52, 130, 197 ,1);
+  cursor: pointer;
+}
+div.sticky-nav ul li span:hover {
+  color: rgba(52, 197, 197, 1);
+}
+div.sticky-nav ul li:last-child {
+  margin: 0 100px 0 20px;
+}
+
+/* --- Posts --- */
+
+div.post {
+  padding: 25px 100px;
+  border-bottom: 1px dashed rgba(136, 136, 136, 1);
+}
+div.post:hover {
+  border-bottom: 1px solid rgba(136, 136, 136, 1);
+  background-color: rgba(27, 27, 27, 0.9);
+  cursor: pointer;
+}
+div.post p {
+  margin: 0;
+}
+div.post p.title a {
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+}
+div.post p.title a:hover {
+  text-decoration: none;
+}
+div.post p.title span {
+  color: rgba(136, 136, 136, 1);
+  margin-left: 5px;
+  font-size: 11px;
+}
+div.post p.details {
+  margin: 5px 0;
+  color: rgba(136, 136, 136, 1);
+}
+div.post p.details {
+  font-size: 12px;
+}
+div.post p.links {
+  font-size: 12px;
+}
+div.post p.links a {
+  color: rgba(255, 255, 255, 1);
+}

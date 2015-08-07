@@ -1,14 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Specify where Angular App is on page - can be placed anywhere -->
+<html lang="en" ng-app="devpad">
   <head>
     <meta charset="utf-8">
     <title>DevPad - For Developers</title>
     <meta name="author" content="Andrew Hill">
-    <link href="css/app.css" rel="stylesheet" type="text/css"/>
-    <link rel="shortcut icon" href="assets/favicons/64.ico" />
+    <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" />
   </head>
 
-  <body>
+  <!-- Set main application controller -->
+  <!-- Paramater name matches controller function name -->
+  <body ng-controller="AppCtrl">
+    <div class="container">
+      <div class="sticky-nav">
+        <div class="logo">
+          <p>DevPad <span>for web developers</span></p>
+        </div>
+        <ul>
+          <li>What is DevPad?</li>
+          <li>Infinite Scroll is <span>off</span></li>
+        </ul>
+      </div>
+      <!-- Set reddit API data controller -->
+      <div class="main" ng-controller="postsListCtrl" >
+        <!-- Repeat this template for each data object in list variable in controllers -->
+        <div class="post" ng-repeat="post in list">
+          <p class="title">
+            <!-- Express variables within template curly braces -->
+            <a href="#" target="_blank">{{ post.data.title }}</a><span>({{ post.data.domain }})</span>
+          </p>
+          <p class="details">
+            {{ post.data.ups }} Points on <a href="#">{{ post.data.subreddit }}</a> {{ post.data.created_utc }} ago
+          </p>
+          <p class="links">
+            <a href="#" target="_blank">Read {{ post.data.num_comments }} comments</a>
+          </p>
+        </div>
+      </div>
+    </div>
     <script src="lib/jquery/jquery-1.11.1.min.js"></script>
     <script src="lib/angular/angular.min.js"></script>
     <script src="js/app.js"></script>
