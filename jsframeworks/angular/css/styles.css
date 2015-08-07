@@ -40,7 +40,7 @@ body {
 }
 
 div.main {
-  margin-top: 62px;
+  margin-top: 102px;
 }
 
 a,
@@ -60,7 +60,7 @@ div.sticky-nav {
   background-color: rgba(27, 27, 27, 0.9);
   border-top: 2px solid rgba(27, 27, 27, 1);
   border-bottom: 2px solid rgba(22, 22, 22, 1);
-  height: 60px;
+  height: 100px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -96,10 +96,46 @@ div.sticky-nav ul li span {
 div.sticky-nav ul li span:hover {
   color: rgba(52, 197, 197, 1);
 }
-div.sticky-nav ul li:last-child {
+ ul li:last-child {
   margin: 0 100px 0 20px;
 }
 
+div.sticky-nav ul.regional-navigation {
+  clear: both;
+  float: left;
+  margin: 15px 0 0 100px;
+}
+div.sticky-nav ul.regional-navigation li {
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: rgba(27, 27, 27, 1);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+div.sticky-nav ul.regional-navigation li:hover,
+div.sticky-nav ul.regional-navigation li.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+div.sticky-nav ul.regional-navigation li.hackernews {
+  background-color: rgba(255, 102, 0, 0.5);
+}
+div.sticky-nav ul.regional-navigation li.hackernews:hover:after {
+  content: "Coming Soon";
+}
+div.sticky-nav ul.regional-navigation li.hackernews.active {
+  background-color: rgba(255, 102, 0, 1);
+}
+div.sticky-nav ul.regional-navigation li.all-reddits {
+  background-color: rgba(86, 146, 255, 0.5);
+}
+div.sticky-nav ul.regional-navigation li.all-reddits:hover,
+div.sticky-nav ul.regional-navigation li.all-reddits.active {
+  background-color: rgba(86, 146, 255, 1);
+}
+div.sticky-nav ul.regional-navigation li:first-child {
+  margin-left: 0;
+}
 /* --- Posts --- */
 
 div.post {
@@ -119,7 +155,7 @@ div.post p.title a {
   font-size: 16px;
 }
 div.post p.title a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 div.post p.title span {
   color: rgba(136, 136, 136, 1);

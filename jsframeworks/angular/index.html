@@ -12,7 +12,7 @@
 
   <!-- Set main application controller -->
   <!-- Paramater name matches controller function name -->
-  <body ng-controller="AppCtrl">
+  <body>
     <div class="container">
       <div class="sticky-nav">
         <div class="logo">
@@ -22,25 +22,38 @@
           <li>What is DevPad?</li>
           <li>Infinite Scroll is <span>off</span></li>
         </ul>
+        <ul class="regional-navigation">
+          <li class="hackernews">HackerNews</li>
+          <li class="all-reddits active">All Subreddits</li>
+          <li>accessibility</li>
+          <li>css</li>
+          <li>frontend</li>
+          <li>html</li>
+          <li>javascript</li>
+          <li>semanticweb</li>
+          <li>usability</li>
+          <li>web_design</li>
+        </ul>
       </div>
       <!-- Set reddit API data controller -->
       <div class="main" ng-controller="postsListCtrl" >
-        <!-- Repeat this template for each data object in list variable in controllers -->
-        <div class="post" ng-repeat="post in list">
+        <!-- Repeat this template for each data object in posts variable in controllers -->
+        <div class="post" ng-repeat="post in posts">
           <p class="title">
             <!-- Express variables within template curly braces -->
-            <a href="#" target="_blank">{{ post.data.title }}</a><span>({{ post.data.domain }})</span>
+            <a href="{{ post.data.url }}" target="_blank">{{ post.data.title }}</a><span>({{ post.data.domain }})</span>
           </p>
           <p class="details">
-            {{ post.data.ups }} Points on <a href="#">{{ post.data.subreddit }}</a> {{ post.data.created_utc | convertEpochToHumanReadable }}
+            {{ post.data.ups }} Points on <a href="http://www.reddit.com/r/{{ post.data.subreddit }}">{{ post.data.subreddit }}</a> {{ post.data.created_utc | convertEpochToHumanReadable }}
           </p>
           <p class="links">
-            <a href="#" target="_blank">Read {{ post.data.num_comments }} comments</a>
+            <a href="http://www.reddit.com{{ post.data.permalink }}" target="_blank">Read {{ post.data.num_comments }} comments</a>
           </p>
         </div>
       </div>
     </div>
     <script src="lib/jquery/jquery-1.11.1.min.js"></script>
+    <script src="lib/jquery/jquery.color-2.1.2.min.js"></script>
     <script src="lib/angular/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/services.js"></script>
