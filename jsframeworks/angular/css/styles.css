@@ -120,12 +120,11 @@ div.sticky-nav ul.regional-navigation li.active {
 div.sticky-nav ul.regional-navigation li.hackernews {
   background-color: rgba(255, 102, 0, 0.5);
 }
-div.sticky-nav ul.regional-navigation li.hackernews:hover:after {
-  content: "Coming Soon";
-}
+div.sticky-nav ul.regional-navigation li.hackernews:hover,
 div.sticky-nav ul.regional-navigation li.hackernews.active {
   background-color: rgba(255, 102, 0, 1);
 }
+div.sticky-nav ul.regional-navigation li.all-reddits:hover,
 div.sticky-nav ul.regional-navigation li.all-reddits {
   background-color: rgba(86, 146, 255, 0.5);
 }
